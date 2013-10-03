@@ -1,0 +1,12 @@
+<!-- File: /app/View/PatientReg/view.ctp -->
+
+<h1><?php echo h($patient['PatientReg']['Title']); ?></h1>
+<p><small>First Name: <?php echo $patient['PatientReg']['First_Name']; ?></small></p>
+
+
+
+
+
+
+
+

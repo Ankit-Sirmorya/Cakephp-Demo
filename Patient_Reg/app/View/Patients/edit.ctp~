@@ -1,0 +1,78 @@
+<!-- File: /app/View/Patients/edit.ctp -->
+
+<font size='5'> <strong>Patient Registration Form </strong></font>
+
+<?php
+
+echo $this->Form->create('Patient');
+echo $this->Form->input('id', array('type' => 'hidden')); ?>
+
+<table>
+   <tr>
+	<td> <?php echo $this->Form->input('Title',array('type'=> 'select','options'=>array('Mr.', 'Mrs.', 'Miss')));?> </td>
+	<td> <?php echo $this->Form->input('First Name',array('type'=>'text','maxlength'=>'45','size'=>3));?></td>
+	<td> <?php echo $this->Form->input('Last Name',array('type'=>'text','maxlength'=>'45','size'=>3));?></td>
+   </tr>
+</table>
+
+<table>
+   <tr>	
+	<td><?php echo $this->Form->input('Gender',array('type'=> 'select','options'=>array('Male', 'Female')));?>
+	<td><?php echo $this->Form->input('DOB', array('label' => 'Date of birth',
+    							'dateFormat' => 'DMY',
+    							'minYear' => date('Y') - 70,
+    							'maxYear' => date('Y') - 0
+							));  ?>
+   </tr>
+</table>
+
+<table>
+   <tr>	
+	<td><?php echo $this->Form->input('Mobile',array('type'=>'tel','maxlength'=>'10','style'=>'width:150px; height:15px;'));?>
+	<td><?php echo $this->Form->input('EmailId',array('type'=>'email','maxlength'=>'30','style'=>'width:250px; height:20px;'));?>
+   </tr>
+
+</table>
+
+<table>
+   <tr>	
+	<td><?php echo $this->Form->input('Marital Status',array('type'=> 'select','options'=>array('Unmarried', 'Married')));?>
+	<td><?php echo $this->Form->input('Occupation',array('type'=>'text','maxlength'=>'20','style'=>'width:200px; height:20px;'));?></td>
+   </tr>
+</table>
+
+<table>
+   <tr>
+	<td> <?php echo $this->Form->input('Address Line 1',array('type'=>'text'));?></td>
+	<td> <?php echo $this->Form->input('Address Line 2',array('type'=>'text'));?></td>
+   </tr>
+</table>
+
+<table>
+   <tr>
+	<td> <?php echo $this->Form->input('City',array('type'=>'text','style'=>'width:200px; height:20px;'));?></td>
+	<td> <?php echo $this->Form->input('State',array('type'=>'text','style'=>'width:200px; height:20px;'));?></td>
+	
+	<td> <?php echo $this->CountryList->select('Country','Country');?></td> 
+	<td> <?php echo $this->Form->input('Pincode',array('type'=>'text','style'=>'width:200px; height:20px;'));?></td>
+   </tr>
+</table>
+
+<table>
+   <tr>
+	<td> <?php echo $this->Form->input('Concession Type',array('type'=>'select','options'=>array('Student','Senior','Women')));?></td>
+	<td> <?php echo $this->Form->input('Emergency Contact No',array ( 'type' => 'tel' , 'maxlength' => '10','style' => 										  'width:150px;height:15px;')); ?> </td>
+   </tr>
+</table>
+	
+
+	<?php 
+	
+	echo $this->Form->input('Referral Source',array('type'=>'text','rows'=>2));
+	echo $this->Form->end('Submit');
+	//echo $this->Form->button('List Patients', array('onclick' => "location.href='".$this->Html->url("/PatientReg/lists")."'"));	
+
+	?>
+	
+
+
